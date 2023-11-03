@@ -83,7 +83,7 @@ scene.add(ambientLight);
 // const dLightShadowHelper = new THREE.CameraHelper(directionalLight.shadow.camera);
 // scene.add(dLightShadowHelper);
 
-const spotLight = new THREE.SpotLight(0xFFFFFF, 70000);
+const spotLight = new THREE.SpotLight(0xFFFFFF);
 scene.add(spotLight);
 spotLight.position.set(-100, 100, 0);
 spotLight.castShadow = true;
@@ -252,7 +252,7 @@ function animate(time) {
 renderer.setAnimationLoop(animate);
 
 window.addEventListener('resize', function () {
-    camera.aspect = window.innerWidth / this.innerWidth.innerHeight;
+    camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
 });
